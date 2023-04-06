@@ -1,0 +1,23 @@
+{
+  "version": "1.0.0",
+  "name": "My Electric Vehicle",
+  "description": "Rikshaw Booking App",
+  "type": "web",
+  "launch_path": "/index.html",
+  "icons": {
+    "56": "/assets/icons/kaios_56.png",
+    "112": "/assets/icons/kaios_112.png"
+  },
+  "developer": {
+    "name": "Raghav",
+    "url": "https://mee-raghav-45.vercel.app/"
+  },
+  "locales": {
+    "en-US": {
+      "name": "My Electric Vehicle",
+      "subtitle": "Rikshaw Booking App",
+      "description": "Rikshaw Booking App"
+    }
+  },
+  "default_locale": "en-US"
+}
