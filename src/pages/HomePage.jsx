@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import { Header, Softkey } from "../components"
+import { Header, Input, ToDos, Softkey } from "../components"
 import { useNavigation } from "../hooks/useNavigation"
-import { AnotherDeviceAuth } from '../components/AnotherDeviceAuth';
+import { AnotherDeviceAuth } from '../components/AnotherDeviceAuth'
 
-export default function Loginpage() {
+export default function Home() {
   const [current, setNavigation] = useNavigation();
 
   const onKeyCenter = () => {
@@ -30,11 +30,10 @@ export default function Loginpage() {
   };
 
   const onKeyRight = () => {
-    // const currentIndex = parseInt(
-    //   document.querySelector("[nav-selected=true]").getAttribute("nav-index"),
-    //   10
-    // );
-    console.log('first')
+    const currentIndex = parseInt(
+      document.querySelector("[nav-selected=true]").getAttribute("nav-index"),
+      10
+    );
     // if (currentIndex > 0) {
     //   setToDo(prevState => {
     //     const current = [...prevState];
@@ -50,7 +49,7 @@ export default function Loginpage() {
     <>
       <Header title="My Electric Vehicle" />
 
-      <AnotherDeviceAuth />
+      <p>Homepage</p>
 
       <Softkey
         center={current.type === "INPUT" ? "Insert" : "Toggle"}

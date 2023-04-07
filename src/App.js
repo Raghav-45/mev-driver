@@ -1,17 +1,22 @@
 import React, { useState } from 'react'
-import { Header, Input, ToDos, Softkey } from "./components"
+import { Header, Softkey } from "./components"
 import { useNavigation } from "./hooks/useNavigation"
-import { AnotherDeviceAuth } from './components/AnotherDeviceAuth';
+import { useAuth } from './contexts/AuthContext'
+
+import { useNavigate } from 'react-router-dom'
 
 export default function App() {
   const [current, setNavigation] = useNavigation();
+  const { currentUser } = useAuth()
+
+  const navigate = useNavigate()
 
   const onKeyCenter = () => {
-    const currentElement = document.querySelector("[nav-selected=true]");
-    const currentNavigationIndex = parseInt(
-      currentElement.getAttribute("nav-index"),
-      10
-    );
+    // const currentElement = document.querySelector("[nav-selected=true]");
+    // const currentNavigationIndex = parseInt(
+    //   currentElement.getAttribute("nav-index"),
+    //   10
+    // );
 
     // const isATask = currentNavigationIndex > 0;
     // if (isATask) {
@@ -30,10 +35,10 @@ export default function App() {
   };
 
   const onKeyRight = () => {
-    const currentIndex = parseInt(
-      document.querySelector("[nav-selected=true]").getAttribute("nav-index"),
-      10
-    );
+    // const currentIndex = parseInt(
+    //   document.querySelector("[nav-selected=true]").getAttribute("nav-index"),
+    //   10
+    // );
     // if (currentIndex > 0) {
     //   setToDo(prevState => {
     //     const current = [...prevState];
@@ -49,13 +54,18 @@ export default function App() {
     <>
       <Header title="My Electric Vehicle" />
 
-      <p>Homepage</p>
+      <div style={{height: '15rem', width: '100%', paddingInline: '20px', paddingTop: '4rem'}}>
+        {!currentUser && <button className="button" role="button" style={{width: '100%'}} onClick={() => navigate('/account')}>Sign in to Account</button>}
+        <button className="button" role="button" style={{width: '100%', marginTop: '1rem'}} onClick={() => navigate('/start-driver')}>Start</button>
+      </div>
 
       <Softkey
-        center={current.type === "INPUT" ? "Insert" : "Toggle"}
-        onKeyCenter={onKeyCenter}
-        right={current.type === "SPAN" ? "Delete" : ""}
-        onKeyRight={onKeyRight}
+        left={'Account'}
+        onKeyLeft={() => navigate('/account')}
+        center={'Start'}
+        onKeyCenter={() => navigate('/start-driver')}
+        // right={'Start'}
+        // onKeyRight={() => navigate('/start-driver')}
       />
     </>
   );
