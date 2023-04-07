@@ -35,6 +35,65 @@ body,
   border: 0;
 }
 
+/* Login Helper */
+
+.loginHelperContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 25px;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+}
+
+.loginHelperContainer h1 {
+  text-align: center;
+  margin: 0 0 20px 0;
+  color: #555;
+}
+
+.loginHelperContainer input[type="text"],
+.loginHelperContainer input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 7px;
+  border: none;
+  margin-bottom: 20px;
+  background-color: #F6F6F6;
+}
+
+.loginHelperContainer input[type="submit"] {
+  background-color: #4299E1;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.loginHelperContainer button {
+  background-color: #4299E1;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.loginHelperContainer input[type="submit"]:hover {
+  background-color: #2B6CB0;
+}
+
+.loginHelperContainer label {
+  color: #555;
+  font-weight: bold;
+  margin-bottom: 7px;
+  display: block;
+}
+
+/* Login Helper */
+
 /*
   Remove the following styles before
   sending to the device or simulator
