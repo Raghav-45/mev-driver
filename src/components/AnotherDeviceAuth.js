@@ -8,7 +8,7 @@ export const AnotherDeviceAuth = () => {
   const [loginState, setLoginState] = useState()
   const { currentUser, logout } = useAuth()
 
-  function generateRandomKey() {
+  function generateRandomKey() { // O & 0 is Excluded from Key for making it easy to speak
     const characters = 'ABCDEFGHIJKLMNPQRSTUVWXYZ'
     function getRandomInt(min, max) {
       return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -21,7 +21,6 @@ export const AnotherDeviceAuth = () => {
   useEffect(() => {
     loginState == 'success' && currentUser && console.log('redirect')
   }, [currentUser, loginState])
-  
 
   useEffect(() => {
     const sub = supabase.channel('any')
