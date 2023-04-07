@@ -28,9 +28,9 @@ export const Softkey = ({ left,      center,      right,
 
   return (
     <div className={css.softkey}>
-      <label className={css.left}>{left}</label>
-      <label className={css.center}>{center}</label>
-      <label className={css.right}>{right}</label>
+      <label onClick={() => onKeyLeft()} className={css.left}>{left}</label>
+      <label onClick={() => onKeyCenter()} className={css.center}>{center}</label>
+      <label onClick={() => onKeyRight()} className={css.right}>{right}</label>
     </div>
   );
 };
