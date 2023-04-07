@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { supabase } from '../lib/supabaseClient'
+import { useAuth } from '../contexts/AuthContext'
 
 export const AnotherDeviceAuth = () => {
   const [key, setKey] = useState(generateRandomKey())
   const [loginDetailsReceived, setLoginDetailsReceived] = useState()
+  const [loginState, setLoginState] = useState()
+  const { currentUser, logout } = useAuth()
 
   function generateRandomKey() {
     const characters = 'ABCDEFGHIJKLMNPQRSTUVWXYZ'
@@ -14,6 +17,11 @@ export const AnotherDeviceAuth = () => {
   }
 
   const generateNewKey = () => {setKey(generateRandomKey())}
+
+  useEffect(() => {
+    loginState == 'success' && currentUser && console.log('redirect')
+  }, [currentUser, loginState])
+  
 
   useEffect(() => {
     const sub = supabase.channel('any')
@@ -33,8 +41,8 @@ export const AnotherDeviceAuth = () => {
         password: pass,
       })
 
-      if (error) {console.log('Wrong Details Received.'); generateNewKey(); setLoginDetailsReceived(); return;}
-      data && console.log('Login Success.')
+      if (error) {console.log('Wrong Details Received.'); generateNewKey(); setLoginState(); setLoginDetailsReceived(); return;}
+      data && console.log('Login Success.'); setLoginState('success');
     }
     loginDetailsReceived && loginWithReceivedDetails(loginDetailsReceived.email, loginDetailsReceived.password)
   }, [loginDetailsReceived])
@@ -42,9 +50,8 @@ export const AnotherDeviceAuth = () => {
   return (
     <div style={{textAlign: 'center', margin: 'auto', paddingTop: '60px'}}>
       <p style={{textAlign: 'center', margin: '0'}}>Use this Code to Login</p>
-      <h3 style={{textAlign: 'center', margin: '0', marginTop: '0.65rem'}}>
-        {key}
-      </h3>
+      <h3 style={{textAlign: 'center', margin: '0', marginTop: '0.65rem'}}>{key}</h3>
+      <h6 style={{textAlign: 'center', margin: '0', marginTop: '1rem'}}>{loginState == 'success' && 'Successfully Logged in!'}</h6>
     </div>
   )
 }
