@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Header, Softkey } from "../components"
 import { useNavigation } from "../hooks/useNavigation"
-import { useNavigate } from 'react-router-dom'
+import { useCustomRouter } from '../contexts/CustomRouter'
 import { useAuth } from '../contexts/AuthContext'
 import { supabase } from '../lib/supabaseClient'
 
@@ -12,7 +12,7 @@ export default function Accountpage() {
   const [loginDetailsReceived, setLoginDetailsReceived] = useState()
   const [loginState, setLoginState] = useState()
   const { currentUser, logout } = useAuth()
-  const navigate = useNavigate()
+  const { navigate } = useCustomRouter()
 
   const onKeyCenter = () => {
     const currentElement = document.querySelector("[nav-selected=true]");

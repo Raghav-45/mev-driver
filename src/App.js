@@ -3,13 +3,13 @@ import { Header, Softkey } from "./components"
 import { useNavigation } from "./hooks/useNavigation"
 import { useAuth } from './contexts/AuthContext'
 
-import { useNavigate } from 'react-router-dom'
+import { useCustomRouter } from './contexts/CustomRouter'
 
 export default function App() {
   const [current, setNavigation] = useNavigation();
   const { currentUser } = useAuth()
 
-  const navigate = useNavigate()
+  const { navigate } = useCustomRouter()
 
   const onKeyCenter = () => {
     // const currentElement = document.querySelector("[nav-selected=true]");

@@ -1,12 +1,12 @@
 import React from 'react'
 import { Header, Softkey } from "../components"
-import { useNavigate } from 'react-router-dom'
+import { useCustomRouter } from '../contexts/CustomRouter'
 import { useAuth } from '../contexts/AuthContext'
 import { supabase } from '../lib/supabaseClient'
 
 export default function StartDriving() {
   const { currentUser, logout } = useAuth()
-  const navigate = useNavigate()
+  const { navigate } = useCustomRouter()
   return (
     <>
       <Header title="My Electric Vehicle" />
