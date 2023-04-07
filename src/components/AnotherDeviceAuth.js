@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import { supabase } from '../lib/supabaseClient'
 import { useAuth } from '../contexts/AuthContext'
+import { useNavigate } from 'react-router-dom'
 
 export const AnotherDeviceAuth = () => {
   const [key, setKey] = useState(generateRandomKey())
   const [loginDetailsReceived, setLoginDetailsReceived] = useState()
   const [loginState, setLoginState] = useState()
   const { currentUser, logout } = useAuth()
+
+  const navigate = useNavigate()
 
   function generateRandomKey() { // O & 0 is Excluded from Key for making it easy to speak
     const characters = 'ABCDEFGHIJKLMNPQRSTUVWXYZ'
@@ -41,7 +44,7 @@ export const AnotherDeviceAuth = () => {
       })
 
       if (error) {console.log('Wrong Details Received.'); generateNewKey(); setLoginState(); setLoginDetailsReceived(); return;}
-      data && console.log('Login Success.'); setLoginState('success');
+      data && console.log('Login Success.'); setLoginState('success'); navigate('/', { replace: true });
     }
     loginDetailsReceived && loginWithReceivedDetails(loginDetailsReceived.email, loginDetailsReceived.password)
   }, [loginDetailsReceived])

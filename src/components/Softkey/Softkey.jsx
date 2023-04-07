@@ -13,11 +13,12 @@ export const Softkey = ({ left,      center,      right,
   const handleKeyDown = evt => {
     switch (evt.key) {
       case "SoftLeft":
+      case "ArrowLeft":
         return onKeyLeft && onKeyLeft(evt);
       case "Enter":
         return onKeyCenter && onKeyCenter(evt);
       case "SoftRight":
-      // case "ArrowRight":
+      case "ArrowRight":
         return onKeyRight && onKeyRight(evt);
       default:
         return;
