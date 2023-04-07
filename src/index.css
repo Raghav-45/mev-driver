@@ -18,7 +18,7 @@ body,
   sending to the device or simulator
 */
 
-html,
+/* html,
 body,
 #root {
   height: 320px;
@@ -34,4 +34,4 @@ div[class*="softkey"] {
   top: 320px;
   bottom: auto !important;
   width: 240px;
-}
+} */

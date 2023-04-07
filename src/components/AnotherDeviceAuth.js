@@ -6,11 +6,11 @@ export const AnotherDeviceAuth = () => {
   const [loginDetailsReceived, setLoginDetailsReceived] = useState()
 
   function generateRandomKey() {
-    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    const characters = 'ABCDEFGHIJKLMNPQRSTUVWXYZ'
     function getRandomInt(min, max) {
       return Math.floor(Math.random() * (max - min + 1)) + min;
     }
-    return String(String(getRandomInt(0, 9)) + characters.charAt(getRandomInt(0, 25)) + String(getRandomInt(0, 9)) + characters.charAt(getRandomInt(0, 25)))
+    return String(String(getRandomInt(1, 9)) + characters.charAt(getRandomInt(0, 24)) + String(getRandomInt(1, 9)) + characters.charAt(getRandomInt(0, 24)))
   }
 
   const generateNewKey = () => {setKey(generateRandomKey())}
@@ -40,6 +40,11 @@ export const AnotherDeviceAuth = () => {
   }, [loginDetailsReceived])
   
   return (
-    key && <div>{key}{loginDetailsReceived && ' - Login Details received'}</div>
+    <div style={{textAlign: 'center', margin: 'auto', paddingTop: '60px'}}>
+      <p style={{textAlign: 'center', margin: '0'}}>Use this Code to Login</p>
+      <h3 style={{textAlign: 'center', margin: '0', marginTop: '0.65rem'}}>
+        {key}
+      </h3>
+    </div>
   )
 }
