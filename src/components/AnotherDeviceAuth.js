@@ -47,7 +47,7 @@ export const AnotherDeviceAuth = () => {
   }, [loginDetailsReceived])
   
   return (
-    <div style={{textAlign: 'center', margin: 'auto', paddingTop: '60px'}}>
+    <div style={{textAlign: 'center', margin: 'auto', paddingTop: '4rem'}}>
       <p style={{textAlign: 'center', margin: '0'}}>Use this Code to Login</p>
       <h3 style={{textAlign: 'center', margin: '0', marginTop: '0.65rem'}}>{key}</h3>
       <h6 style={{textAlign: 'center', margin: '0', marginTop: '1rem'}}>{loginState == 'success' && 'Successfully Logged in!'}</h6>
