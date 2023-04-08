@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import css from "./Softkey.module.css";
-import { Box } from "@chakra-ui/react";
 
 export const Softkey = ({ left,      center,      right,
                           onKeyLeft, onKeyCenter, onKeyRight }) => {
@@ -28,15 +27,10 @@ export const Softkey = ({ left,      center,      right,
   };
 
   return (
-    // <div className={css.softkey}>
-    //   <label onClick={() => onKeyLeft()} className={css.left}>{left}</label>
-    //   <label onClick={() => onKeyCenter()} className={css.center}>{center}</label>
-    //   <label onClick={() => onKeyRight()} className={css.right}>{right}</label>
-    // </div>
-    <Box position={'fixed'} bottom={0} className={css.softkey}>
+    <div className={css.softkey}>
       <label onClick={() => onKeyLeft()} className={css.left}>{left}</label>
       <label onClick={() => onKeyCenter()} className={css.center}>{center}</label>
       <label onClick={() => onKeyRight()} className={css.right}>{right}</label>
-    </Box>
+    </div>
   );
 };

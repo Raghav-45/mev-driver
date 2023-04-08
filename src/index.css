@@ -1,9 +1,4 @@
-html, body, #root {
-  height: 100%;
-  margin: 0;
-}
-
-/* * {
+* {
   box-sizing: border-box;
 }
 
@@ -16,9 +11,9 @@ body,
   flex-direction: column;
   overflow: hidden;
   background-color: #E1E2E1 !important;
-} */
+}
 
-/* .button {
+.button {
   background: #5E5DF0;
   border-radius: 999px;
   box-shadow: #5E5DF0 0 10px 20px -10px;
@@ -38,64 +33,64 @@ body,
   width: fit-content;
   word-break: break-word;
   border: 0;
-} */
+}
 
 /* Login Helper */
 
-/* .loginHelperContainer {
-  position: absolute !important;
-  top: 50% !important;
-  left: 50% !important;
-  transform: translate(-50%, -50%) !important;
-  background-color: #fff !important;
-  padding: 25px !important;
-  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2) !important;
+.loginHelperContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 25px;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
 }
 
 .loginHelperContainer h1 {
-  text-align: center !important;
-  margin: 0 0 20px 0 !important;
-  color: #555 !important;
+  text-align: center;
+  margin: 0 0 20px 0;
+  color: #555;
 }
 
 .loginHelperContainer input[type="text"],
 .loginHelperContainer input[type="password"] {
-  width: 100% !important;
-  padding: 10px !important;
-  border-radius: 7px !important;
-  border: none !important;
-  margin-bottom: 20px !important;
-  background-color: #F6F6F6 !important;
+  width: 100%;
+  padding: 10px;
+  border-radius: 7px;
+  border: none;
+  margin-bottom: 20px;
+  background-color: #F6F6F6;
 }
 
 .loginHelperContainer input[type="submit"] {
-  background-color: #4299E1 !important;
-  color: #fff !important;
-  border: none !important;
-  padding: 10px 20px !important;
-  border-radius: 7px !important;
-  cursor: pointer !important;
+  background-color: #4299E1;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 7px;
+  cursor: pointer;
 }
 
 .loginHelperContainer button {
-  background-color: #4299E1 !important;
-  color: #fff !important;
-  border: none !important;
-  padding: 10px 20px !important;
-  border-radius: 7px !important;
-  cursor: pointer !important;
+  background-color: #4299E1;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 7px;
+  cursor: pointer;
 }
 
 .loginHelperContainer input[type="submit"]:hover {
-  background-color: #2B6CB0 !important;
+  background-color: #2B6CB0;
 }
 
 .loginHelperContainer label {
-  color: #555 !important;
-  font-weight: bold !important;
-  margin-bottom: 7px !important;
-  display: block !important;
-} */
+  color: #555;
+  font-weight: bold;
+  margin-bottom: 7px;
+  display: block;
+}
 
 /* Login Helper */
 
@@ -104,7 +99,7 @@ body,
   sending to the device or simulator
 */
 
-/* html,
+html,
 body,
 #root {
   height: 320px;
@@ -120,4 +115,4 @@ div[class*="softkey"] {
   top: 320px;
   bottom: auto !important;
   width: 240px;
-} */
+}

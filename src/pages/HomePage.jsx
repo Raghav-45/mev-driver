@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { Header, Input, ToDos, Softkey } from "../components"
 import { useNavigation } from "../hooks/useNavigation"
 import { AnotherDeviceAuth } from '../components/AnotherDeviceAuth'
-import { Flex } from '@chakra-ui/react';
 
 export default function Home() {
   const [current, setNavigation] = useNavigation();
@@ -47,7 +46,7 @@ export default function Home() {
   };
 
   return (
-    <Flex direction={'column'} height={'calc(100% - 32px)'} width={'100%'}>
+    <>
       <Header title="My Electric Vehicle" />
 
       <p>Homepage</p>
@@ -58,6 +57,6 @@ export default function Home() {
         right={current.type === "SPAN" ? "Delete" : ""}
         onKeyRight={onKeyRight}
       />
-    </Flex>
+    </>
   );
 }
