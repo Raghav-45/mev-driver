@@ -3,9 +3,38 @@
 @tailwind utilities;
 
 html, body, #root {
-  height: 100% !important;
-  margin: 0 !important;
+  height: 100%;
+  margin: 0;
 }
+
+/*
+  Remove the following styles before
+  sending to the device or simulator
+*/
+
+html,
+body,
+#root {
+  height: 320px;
+  width: 240px;
+  background-color: #fff;
+}
+
+html,
+body {
+  background-color: #e1e2e1;
+}
+
+div[class*="softkey"] {
+  top: 320px;
+  bottom: auto !important;
+  width: 240px;
+}
+
+/*
+  Remove the upper styles before
+  sending to the device or simulator
+*/
 
 /* * {
   box-sizing: border-box;
@@ -83,14 +112,6 @@ button {
   background-color: #F6F6F6;
 }
 
-.loginHelperContainer input[type="submit"] {
-  background-color: #4299E1;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-}
-
 .loginHelperContainer button {
   background-color: #4299E1;
   color: #fff;
@@ -100,38 +121,9 @@ button {
   cursor: pointer;
 }
 
-.loginHelperContainer input[type="submit"]:hover {
-  background-color: #2B6CB0;
-}
-
 .loginHelperContainer label {
   color: #555;
-  /* font-weight: bold; */
-  /* margin-bottom: 7px; */
   display: block;
 }
 
 /* Login Helper */
-
-/*
-  Remove the following styles before
-  sending to the device or simulator
-*/
-
-/* html,
-body,
-#root {
-  height: 320px;
-  width: 240px;
-}
-
-html,
-body {
-  background-color: #1c2022;
-}
-
-div[class*="softkey"] {
-  top: 320px;
-  bottom: auto !important;
-  width: 240px;
-} */
