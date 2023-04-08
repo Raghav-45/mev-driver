@@ -5,7 +5,6 @@ import AppPage from '../App'
 import Homepage from '../pages/HomePage'
 import Accountpage from '../pages/AccountPage'
 import StartDriving from '../pages/StartPage'
-import LoginHelperPage from '../pages/LoginHelperPage'
 // import NotfoundPage from '../pages/NotfoundPage'
 // import Profilepage from '../pages/Profilepage'
 // import Registerpage from '../pages/Registerpage'
@@ -53,7 +52,6 @@ export default function RouterContextProvider({ children }) {
   }
 
   // return <RouterContext.Provider value={value}>{children}</RouterContext.Provider>
-  if (window.location.pathname == '/login-helper') {return (<LoginHelperPage />)}
   return (
     <RouterContext.Provider value={value}>
       {
