@@ -4,6 +4,7 @@ import { useNavigation } from "../hooks/useNavigation"
 import { useCustomRouter } from '../contexts/CustomRouter'
 import { useAuth } from '../contexts/AuthContext'
 import { supabase } from '../lib/supabaseClient'
+import { Box, Center, Flex, Heading, Spacer, Text } from '@chakra-ui/react'
 
 export default function Accountpage() {
   const [current, setNavigation] = useNavigation()
@@ -94,14 +95,16 @@ export default function Accountpage() {
   }, [loginDetailsReceived])
 
   return (
-    <>
+    <Flex direction={'column'} height={'calc(100% - 32px)'} width={'100%'}>
       <Header title="My Electric Vehicle" />
 
-      <div style={{textAlign: 'center', margin: 'auto', paddingTop: '4rem'}}>
-        <p style={{textAlign: 'center', margin: '0'}}>Use this Code to Login</p>
-        <h3 style={{textAlign: 'center', margin: '0', marginTop: '0.65rem'}}>{key}</h3>
-        <h6 style={{textAlign: 'center', margin: '0', marginTop: '1rem'}}>{loginState == 'success' && 'Successfully Logged in!'}</h6>
-      </div>
+      <Flex direction={'column'} textAlign={'center'} flexGrow={1} flexShrink={1} flexBasis={'auto'}>
+        <Box margin={'auto'}>
+          <Text>Use this Code to Login</Text>
+          <Heading as='h3' size='md' my={1}>{key}</Heading>
+          <Heading as='h6' size='md'>{loginState == 'success' && 'Successfully Logged in!'}</Heading>
+        </Box>
+      </Flex>
 
       <Softkey
         left={'Home'}
@@ -111,6 +114,6 @@ export default function Accountpage() {
         right={currentUser ? 'logout' : ''}
         onKeyRight={() => logout()}
       />
-    </>
+    </Flex>
   );
 }

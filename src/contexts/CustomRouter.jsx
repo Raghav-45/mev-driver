@@ -44,7 +44,7 @@ export default function RouterContextProvider({ children }) {
     const Path = props.path
     const Element = props.element
     if (Path == location) {return (Element)}
-    else {return (<div></div>)}
+    // else {return (<div></div>)}
   }
 
   const value = {

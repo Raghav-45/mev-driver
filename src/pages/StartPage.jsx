@@ -3,15 +3,16 @@ import { Header, Softkey } from "../components"
 import { useCustomRouter } from '../contexts/CustomRouter'
 import { useAuth } from '../contexts/AuthContext'
 import { supabase } from '../lib/supabaseClient'
+import { Flex, Text } from '@chakra-ui/react'
 
 export default function StartDriving() {
   const { currentUser, logout } = useAuth()
   const { navigate } = useCustomRouter()
   return (
-    <>
+    <Flex direction={'column'} height={'calc(100% - 32px)'} width={'100%'}>
       <Header title="My Electric Vehicle" />
 
-      <p style={{paddingInline: '25px', fontSize: '15px'}}>This is Start Page in which Driver will see a Map and Get an option to Accept or Reject Rides</p>
+      <Text px={'16px'} fontSize='sm'>This is Start Page in which Driver will see a Map and Get an option to Accept or Reject Rides</Text>
 
       <Softkey
         left={'Accept✅'}
@@ -21,6 +22,6 @@ export default function StartDriving() {
         right={'Reject❌'}
         // onKeyRight={() => navigate('/start-driver')}
       />
-    </>
+    </Flex>
   )
 }
