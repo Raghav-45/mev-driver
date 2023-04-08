@@ -13,7 +13,8 @@
   box-sizing: border-box;
   line-height: 26px;
   margin-top: auto;
-  position: absolute;
+  /* position: absolute; */
+  position: fixed;
   bottom: 0;
 }
 

@@ -94,13 +94,15 @@ export default function Accountpage() {
   }, [loginDetailsReceived])
 
   return (
-    <>
+    <div className='flex flex-col h-[calc(100%-32px)] w-full'>
       <Header title="My Electric Vehicle" />
 
-      <div style={{textAlign: 'center', margin: 'auto', paddingTop: '4rem'}}>
-        <p style={{textAlign: 'center', margin: '0'}}>Use this Code to Login</p>
-        <h3 style={{textAlign: 'center', margin: '0', marginTop: '0.65rem'}}>{key}</h3>
-        <h6 style={{textAlign: 'center', margin: '0', marginTop: '1rem'}}>{loginState == 'success' && 'Successfully Logged in!'}</h6>
+      <div className='flex flex-col text-center flex-1'>
+        <div className='m-auto'>
+          <p className='text-md'>Use this Code to Login</p>
+          <h3 className='text-lg font-bold my-1'>{key}</h3>
+          <h6 className='text-xs font-normal'>{loginState == 'success' && 'Successfully Logged in!'}</h6>
+        </div>
       </div>
 
       <Softkey
@@ -111,6 +113,6 @@ export default function Accountpage() {
         right={currentUser ? 'logout' : ''}
         onKeyRight={() => logout()}
       />
-    </>
+    </div>
   );
 }

@@ -1,4 +1,13 @@
-* {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root {
+  height: 100% !important;
+  margin: 0 !important;
+}
+
+/* * {
   box-sizing: border-box;
 }
 
@@ -11,11 +20,24 @@ body,
   flex-direction: column;
   overflow: hidden;
   background-color: #E1E2E1 !important;
+} */
+
+.blue-bg {
+  background: #4299e1;
+  background-color: #4299e1;
+  color: #ffffff;
+}
+.blue-500-bg {
+  background: #3182ce;
+  background-color: #3182ce;
+  color: #ffffff;
 }
 
-.button {
-  background: #5E5DF0;
-  border-radius: 999px;
+button {
+  background: #4299e1;
+  background-color: #4299e1;
+  color: #ffffff;
+  /* border-radius: 999px;
   box-shadow: #5E5DF0 0 10px 20px -10px;
   box-sizing: border-box;
   color: #FFFFFF;
@@ -32,7 +54,7 @@ body,
   touch-action: manipulation;
   width: fit-content;
   word-break: break-word;
-  border: 0;
+  border: 0; */
 }
 
 /* Login Helper */
@@ -57,9 +79,7 @@ body,
 .loginHelperContainer input[type="password"] {
   width: 100%;
   padding: 10px;
-  border-radius: 7px;
   border: none;
-  margin-bottom: 20px;
   background-color: #F6F6F6;
 }
 
@@ -68,7 +88,6 @@ body,
   color: #fff;
   border: none;
   padding: 10px 20px;
-  border-radius: 7px;
   cursor: pointer;
 }
 
@@ -87,8 +106,8 @@ body,
 
 .loginHelperContainer label {
   color: #555;
-  font-weight: bold;
-  margin-bottom: 7px;
+  /* font-weight: bold; */
+  /* margin-bottom: 7px; */
   display: block;
 }
 
@@ -99,7 +118,7 @@ body,
   sending to the device or simulator
 */
 
-html,
+/* html,
 body,
 #root {
   height: 320px;
@@ -115,4 +134,4 @@ div[class*="softkey"] {
   top: 320px;
   bottom: auto !important;
   width: 240px;
-}
+} */

@@ -8,10 +8,15 @@ export default function StartDriving() {
   const { currentUser, logout } = useAuth()
   const { navigate } = useCustomRouter()
   return (
-    <>
+    <div className='flex flex-col h-[calc(100%-32px)] w-full'>
       <Header title="My Electric Vehicle" />
 
-      <p style={{paddingInline: '25px', fontSize: '15px'}}>This is Start Page in which Driver will see a Map and Get an option to Accept or Reject Rides</p>
+      {/* <p className='px-[20px] text-xs'>This is Start Page in which Driver will see a Map and Get an option to Accept or Reject Rides</p> */}
+      <div className='flex flex-col text-center flex-1'>
+        <div className='my-auto'>
+          <p className='px-[20px] text-xs'>This is Start Page in which Driver will see a Map and Get an option to Accept or Reject Rides</p>
+        </div>
+      </div>
 
       <Softkey
         left={'Accept✅'}
@@ -21,6 +26,6 @@ export default function StartDriving() {
         right={'Reject❌'}
         // onKeyRight={() => navigate('/start-driver')}
       />
-    </>
+    </div>
   )
 }

@@ -51,12 +51,14 @@ export default function App() {
   };
 
   return (
-    <>
+    <div className='flex flex-col h-[calc(100%-32px)] w-full'>
       <Header title="My Electric Vehicle" />
 
-      <div style={{height: '15rem', width: '100%', paddingInline: '20px', paddingTop: '4rem'}}>
-        {!currentUser && <button className="button" role="button" style={{width: '100%'}} onClick={() => navigate('/account')}>Sign in to Account</button>}
-        <button className="button" role="button" style={{width: '100%', marginTop: '1rem'}} onClick={() => navigate('/start-driver')}>Start</button>
+      <div className='flex flex-col text-center flex-1'>
+        <div className='my-auto mx-[25px]'>
+          {!currentUser && <button className='blue-500-bg text-sm font-semibold h-8 w-full px-4 rounded-md' onClick={() => navigate('/account')}>Sign in to Account</button>}
+          <button className='blue-500-bg text-sm font-semibold h-8 w-full px-4 rounded-md mt-2' onClick={() => navigate('/start-driver')}>Start</button>
+        </div>
       </div>
 
       <Softkey
@@ -67,6 +69,6 @@ export default function App() {
         // right={'Start'}
         // onKeyRight={() => navigate('/start-driver')}
       />
-    </>
+    </div>
   );
 }

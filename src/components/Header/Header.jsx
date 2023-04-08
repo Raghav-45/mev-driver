@@ -1,10 +1,9 @@
 import React from 'react'
-import css from './Header.module.css';
 
 export const Header = ({ title }) => {
   return (
-    <header className={css.header}>
-      <span>{title}</span>
+    <header className='flex h-[32px] blue-bg items-center bg-[#4299E1] px-[10px] flex-none'>
+      <span className='text-center text-base font-semibold'>{title}</span>
     </header>
   )
 }
