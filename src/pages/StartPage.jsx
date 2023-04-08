@@ -11,7 +11,7 @@ export default function StartDriving() {
     <>
       <Header title="My Electric Vehicle" />
 
-      <p style={{paddingInline: '25px', fontSize: '15px'}}>This is Start Page in which Driver will see a Map and Get a option to Accept or Reject Rides</p>
+      <p style={{paddingInline: '25px', fontSize: '15px'}}>This is Start Page in which Driver will see a Map and Get an option to Accept or Reject Rides</p>
 
       <Softkey
         left={'Accept✅'}
