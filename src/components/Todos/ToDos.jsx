@@ -10,8 +10,10 @@ export const ToDos = ({ toDos }) => {
         <span
           nav-selectable="true"
           key={index}
-          className={`${css.todo} ${toDo.completed ? css.completed : ''}`}>
-          {toDo.name}
+          className={`${css.todo}`}
+          style={{background: 'rgb(147 197 253)'}}
+        >
+          {toDo.pickup_loc} - {toDo.drop_loc}
         </span>
       ))}
     </div>
