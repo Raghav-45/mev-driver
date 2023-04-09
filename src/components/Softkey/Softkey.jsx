@@ -15,7 +15,7 @@ export const Softkey = ({ left,      center,      right,
       case "SoftLeft":
       case "7":
         return onKeyLeft && onKeyLeft(evt);
-      case "Enter":
+      // case "Enter":
       case "8":
         return onKeyCenter && onKeyCenter(evt);
       case "SoftRight":
